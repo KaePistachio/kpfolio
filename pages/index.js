@@ -6,7 +6,7 @@ import TypewriterComponent from "typewriter-effect";
 import { useState } from "react";
 
 /***** IMAGE IMPORTS *****/
-import logo from "../images/logo.png";
+import logo from "../images/Logo.png";
 import gitIcon from "../images/github-y.png";
 import linkedIcon from "../images/linked-y.png";
 import message from "../images/message.png";

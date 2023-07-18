@@ -3,7 +3,7 @@ import Image from "next/image";
 import TypewriterComponent from "typewriter-effect";
 import styles from "../styles/Home.module.css";
 
-import logo from "../images/logo.png";
+import logo from "../images/Logo.png";
 import { useState } from "react";
 
 const NavBar = () => {
