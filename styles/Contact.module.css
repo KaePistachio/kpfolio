@@ -62,20 +62,24 @@
   flex-direction: column;
 }
 
-.contactForm div:nth-child(2) {
+.contactForm div:first-child, .contactForm div:nth-child(2) {
+  margin-top: 28px;
+}
+
+.contactForm div:nth-child(2), .contactForm div:nth-child(4) {
   align-items: flex-end;
 }
 
-.contactForm div:nth-child(3) {
+.contactForm div:nth-child(5) {
   grid-column: 1 / span 2;
   padding-bottom: 20px;
 }
 
-.contactForm div:nth-child(4) {
+.contactForm div:nth-child(6) {
   width: 500px;
   grid-column: 1 / span 2;
   padding-bottom: 0px;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .contactForm label {
@@ -102,12 +106,12 @@
 }
 
 .contactForm button {
-  width: 120px;
-  padding: 6px 12px;
-  border: 1px solid var(--summer);
-  background-color: var(--main-dark);
-  border-radius: 4px; 
+  width: 230px;
+  background-color: rgba(0,0,0,0);
+  padding: 0px;
+  border: none;
   font-family: "input-mono", monospace;
+  text-align: left;
 }
 
 @media (max-width: 750px) {

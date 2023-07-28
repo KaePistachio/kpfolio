@@ -1,9 +1,44 @@
+import { useRef, useState } from "react";
+import { useRouter } from "next/router";
+import emailjs from "@emailjs/browser";
 import Head from "next/head";
-import Link from "next/link";
-import Image from "next/image";
+
 import styles from "../styles/Contact.module.css";
 
 const Contact = () => {
+  const serviceId = "nwdevpassthrough";
+  const templateId = "template_ac7lagu";
+  const userId = "user_j4c0V4ZrBMna5X9uxYFo5";
+  const router = useRouter();
+  const form = useRef();
+  const [isSubmitting, setIsSubmitting] = useState("Submit >>>");
+
+  const sendEmail = (e) => {
+    const myInterval = setInterval(setSubmit, 500);
+    function setSubmit() {
+      setIsSubmitting("Sending Email.");
+      setTimeout(() => setIsSubmitting("Sending Email.."), 100);
+      setTimeout(() => setIsSubmitting("Sending Email..."), 200);
+    }
+    console.log("sending email");
+    e.preventDefault();
+
+    emailjs.sendForm(serviceId, templateId, e.target, userId).then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+
+    if (emailjs.sendForm) {
+      setTimeout(() => clearInterval(myInterval), 1000);
+      setTimeout(() => setIsSubmitting("Redirecting..."), 1500);
+      setTimeout(() => router.push("/"), 2000);
+    }
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -19,21 +54,49 @@ const Contact = () => {
         <div className={styles.contactMe}>
           <div className={styles.contactContainer}>
             <h1>Contact Me</h1>
-            <form className={styles.contactForm}>
+            <form
+              className={styles.contactForm}
+              onSubmit={sendEmail}
+              ref={form}
+            >
               <div>
-                <label>Name</label>
-                <input type="text" required></input>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name*"
+                  required
+                ></input>
               </div>
               <div>
-                <label>Email</label>
-                <input type="text" required></input>
+                <input
+                  type="text"
+                  name="email"
+                  placeholder="Email*"
+                  required
+                ></input>
               </div>
               <div>
-                <label>Message</label>
-                <textarea required></textarea>
+                <input type="text" name="number" placeholder="Number"></input>
               </div>
               <div>
-                <button>Submit</button>
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="Subject*"
+                  required
+                ></input>
+              </div>
+              <div>
+                <textarea
+                  name="message"
+                  placeholder="Please enter your query here, thanks!"
+                  required
+                ></textarea>
+              </div>
+              <div>
+                <button type="submit" className="contact-button">
+                  {isSubmitting}
+                </button>
               </div>
             </form>
           </div>

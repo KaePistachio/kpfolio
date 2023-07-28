@@ -23,7 +23,7 @@ const Portfolio = () => {
     image: orderForm,
     description:
       "For this work project I created an API using a PostgresSQL, Express, React & Node.js stack, for an online order form designed to keep track of stock, standardise data entry and streamline the sales team workload.",
-    link: "/order-form-app",
+    link: "/order-form",
   };
 
   const projectArray = [trackerProject, orderFormProject];
@@ -67,7 +67,8 @@ const Portfolio = () => {
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0"
-        ></meta>
+        >
+        </meta>
         <link rel="icon" href="/asset.png"></link>
       </Head>
 
@@ -88,7 +89,7 @@ const Portfolio = () => {
                   className={styles.portfolioLink}
                   href={activeProject.link}
                 >
-                  See More {">>>"}
+                  View Project {">>>"}
                 </Link>
               </div>
               <div className={styles.leftArrowContainer}>

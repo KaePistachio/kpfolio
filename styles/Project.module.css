@@ -1,0 +1,64 @@
+.projectBody {
+  height: 100%;
+  display: flex;
+}
+
+.project {
+  top:0px;
+  left:0px;
+  height: 100vh;
+  position: absolute;
+  z-index: 4;
+  width: calc(65%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.projectContainer {
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project h1,
+.project h6 {
+  text-align: left;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.project h1 {
+  width: 500px;
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--summer);
+  margin-top: 0px;
+  margin-bottom: 32px;
+}
+
+.project h6 {
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  font-weight: 300;
+  margin-top: 0px;
+  margin-bottom: 12px;
+}
+
+.ytContainer {
+  max-width: 640px;
+}
+
+.projectLink {
+  margin-top: auto;
+  width: 100%;
+  text-align: right;
+  font-size: 20px;
+}
+
+.projectLink:hover {
+  color: var(--summer);
+}
